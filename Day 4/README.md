@@ -1,31 +1,75 @@
-# Void
+# Void 🌌
 
-- Void is a type that represents **absence** of any value.
-- It is often used as the return type for functions that do not return a value.
+- Void is a type in TypeScript that represents the absence of any value.
+- It is commonly used as the return type for functions that do not produce a value.
 
-# Never
+## Example:
 
-- The never keyword is used to indicate that the function will **not return anything**, or that a variable can have a value.
-- The never type is useful for indicating that certain code paths should never be reached, or that certain values are impossible.
-- It can help catch errors at compile-time instead of runtime.
+```typescript
+function logMessage(message: string): void {
+  console.log(message);
+}
+```
 
-Cases when never will be used:
+# Never 🚫
+
+- The `never` keyword is employed to indicate that a function will not return anything, or that a variable can have no value.
+- It is particularly useful for highlighting code paths that should never be reached or values that are impossible.
+
+Cases when `never` will be used:
 
 1. A function that always throws an error.
-2. A function that has infinite loop.
+2. A function with an infinite loop.
 3. A variable that can never have a value.
 
-# Arrays
+## Examples:
 
-- Arrays are type of object that can store multiple values of **same data** type.
-- Arrays in TypeScript are typed, which means you can specify the type of values that a array can hold.
+```typescript
+function throwError(message: string): never {
+  throw new Error(message);
+}
 
-2 types of Arrays:
+function infiniteLoop(): never {
+  while (true) {
+    // code that never exits
+  }
+}
 
-1. Using the square bracket notation [] to indicate an array of specific type.
-2. Using the generic Array<_type_> notation to indicate an array of specific type.
+let unreachable: never;
+// Uncommenting the following line will result in a TypeScript error
+// unreachable = "This is unreachable";
+```
 
-# Multi-Dimensional Arrays
+# Arrays 📊
+
+- Arrays in TypeScript are objects that can store multiple values of the same data type.
+- They are typed, allowing you to specify the type of values that an array can hold.
+
+## 1. Using Square Bracket Notation:
+
+```typescript
+let numbers: number[] = [1, 2, 3, 4, 5];
+```
+
+## 2. Using Generic Array Notation:
+
+```typescript
+let names: Array<string> = ["Alice", "Bob", "Charlie"];
+```
+
+# Multi-Dimensional Arrays 🌐
 
 - A multi-dimensional array is an array that contains other arrays as its elements.
-- Multi-dimensional arrays can be defined using the same notation as one-dimensional arrays, but with **nested square** brackets.
+- Multi-dimensional arrays can be defined using the same notation as one-dimensional arrays, but with nested square brackets.
+
+## Example:
+
+```typescript
+let matrix: number[][] = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+```
+
+These TypeScript features provide flexibility and type safety, ensuring that your code is more robust and less prone to runtime errors. 🚀
